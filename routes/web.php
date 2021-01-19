@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::resource ＜ルーティングのURL＞,＜使用するコントローラ＞を定義している。
+Route::resource('posts', 'PostController');
+
+if(env('APP_ENV') === 'local') {
+    URL::forceScheme('https');
+}
